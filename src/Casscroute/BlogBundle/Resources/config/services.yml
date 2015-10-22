@@ -1,0 +1,4 @@
+services:
+#    casscroute_blog.example:
+#        class: Casscroute\BlogBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

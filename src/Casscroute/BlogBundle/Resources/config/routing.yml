@@ -1,0 +1,7 @@
+casscroute_blog_homepage:
+    path:     /
+    defaults: { _controller: CasscrouteBlogBundle:Blog:index }
+
+casscroute_blog_post:
+    path:     /post/{id}
+    defaults: { _controller: CasscrouteBlogBundle:Blog:post }

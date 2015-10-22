@@ -1,3 +1,3 @@
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+casscroute_blog:
+    resource: "@CasscrouteBlogBundle/Resources/config/routing.yml"
+    prefix:   /
