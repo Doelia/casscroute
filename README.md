@@ -34,6 +34,15 @@ Puis suivre l'assitant
 
 ## Gestion création table
 ### Afficher ce qui va être créé
+```
 php app/console doctrine:schema:update --dump-sql
+```
 ### Créer
+```
 php app/console doctrine:schema:update --force
+```
+
+# Executer les fixtures (jeu de test)
+```
+php app/console doctrine:fixtures:load
+```
