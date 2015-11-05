@@ -1,3 +1,6 @@
 casscroute_blog:
     resource: "@CasscrouteBlogBundle/Resources/config/routing.yml"
     prefix:   /
+    
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
