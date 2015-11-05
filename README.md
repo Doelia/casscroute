@@ -46,3 +46,9 @@ php app/console doctrine:schema:update --force
 ```
 php app/console doctrine:fixtures:load
 ```
+
+# Ajout bundle externe
+```
+php composer.phar require friendsofsymfony/user-bundle "~2.0@dev"
+```
+Modifier AppKernel.php pour ajouter le nouveau bundle dans l'array bundles (méthode registerBundles)
