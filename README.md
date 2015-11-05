@@ -31,3 +31,9 @@ php app/console doctrine:database:create
 php app/console doctrine:generate:entity
 ```
 Puis suivre l'assitant
+
+## Gestion création table
+### Afficher ce qui va être créé
+php app/console doctrine:schema:update --dump-sql
+### Créer
+php app/console doctrine:schema:update --force
