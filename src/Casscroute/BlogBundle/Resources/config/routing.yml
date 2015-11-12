@@ -5,3 +5,7 @@ casscroute_blog_homepage:
 casscroute_blog_post:
     path:     /post/{id}
     defaults: { _controller: CasscrouteBlogBundle:Blog:post }
+
+casscroute_crud_new:
+    path:     /new
+    defaults: { _controller: CasscrouteBlogBundle:Crud:new }
