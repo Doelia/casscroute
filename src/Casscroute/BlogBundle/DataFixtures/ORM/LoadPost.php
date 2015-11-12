@@ -9,18 +9,18 @@ use Casscroute\BlogBundle\Entity\Post;
 class LoadPost implements FixtureInterface
 {
 
-  public function load(ObjectManager $manager)
-  {
-    for ($i = 0; $i < 15; $i++)
+    public function load(ObjectManager $manager)
     {
-        $post = new Post();
-        $post->setTitle("titre " . $i);
-        $post->setUrlAlias("alias " . $i);
-        $post->setContent("contenu " . $i);
-        $post->setPublished(new \DateTime("2015-01-01 10:00:" . $i));
-        $manager->persist($post);
-    }
+        for ($i = 0; $i < 15; $i++)
+        {
+            $post = new Post();
+            $post->setTitle("titre " . $i);
+            $post->setUrlAlias("alias " . $i);
+            $post->setContent("contenu " . $i);
+            $post->setPublished(new \DateTime("2015-01-01 10:00:" . $i));
+            $manager->persist($post);
+        }
 
-    $manager->flush();
-  }
+        $manager->flush();
+    }
 }
