@@ -52,3 +52,8 @@ php app/console doctrine:fixtures:load
 php composer.phar require friendsofsymfony/user-bundle "~2.0@dev"
 ```
 Modifier AppKernel.php pour ajouter le nouveau bundle dans l'array bundles (méthode registerBundles)
+
+# Créer un formulaire
+```
+php app/console doctrine:generate:form CasscrouteBlogBundle:Post
+```
