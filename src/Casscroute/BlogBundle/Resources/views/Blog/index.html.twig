@@ -5,5 +5,15 @@
     {{ app.session.flashbag.get('notice')|last }}
     {{ app.session.flashbag.get('error')|last }}
 
-<h1>Home page</h1>
+    <h1>Home page</h1>
+
+    {% for post in posts %}
+        <div>
+            <h2>{{ post.title }}</h2>
+            <p>alias: {{post.urlAlias }}</p>
+            <p>published: {{post.published|date('y-m-d') }}</p>
+            <p>{{ post.content[:30] }}</p>
+        <div>
+    {% endfor %}
+
 {% endblock %}
