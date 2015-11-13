@@ -31,6 +31,12 @@ class CrudController extends Controller
         $em = $this->getDoctrine()->getManager();
         $postRepository = $em->getRepository('CasscrouteBlogBundle:Post');
         $post = $postRepository->find($id);
+
+        if ($post == null) {
+            $request->getSession()->getFlashBag()->add('error', "Ce post n'existe pas.");
+            return $this->render('CasscrouteBlogBundle:Blog:index.html.twig');
+        }
+
         $form = $this->get('form.factory')->create(new PostType(), $post);
 
         if ($form->handleRequest($request)->isValid())
@@ -50,11 +56,17 @@ class CrudController extends Controller
         $em = $this->getDoctrine()->getManager();
         $postRepository = $em->getRepository('CasscrouteBlogBundle:Post');
         $post = $postRepository->find($id);
-        $em->remove($post);
-        $em->flush();
 
-        $request->getSession()->getFlashBag()->add('notice', 'Post bien supprimé.');
+        if ($post != null) {
+            $em->remove($post);
+            $em->flush();
+            $request->getSession()->getFlashBag()->add('notice', 'Post bien supprimé.');
+        } else {
+            $request->getSession()->getFlashBag()->add('error', "Ce post n'existe pas.");
+        }
 
         return $this->render('CasscrouteBlogBundle:Blog:index.html.twig');
+
+
     }
 }

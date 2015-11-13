@@ -2,7 +2,8 @@
 
 {% block blog_body %}
 
-{{ app.session.flashbag.get('notice')|last }}
+    {{ app.session.flashbag.get('notice')|last }}
+    {{ app.session.flashbag.get('error')|last }}
 
 <h1>Home page</h1>
 {% endblock %}
