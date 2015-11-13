@@ -1,5 +1,8 @@
 {% extends "CasscrouteBlogBundle::layout.html.twig" %}
 
 {% block blog_body %}
-  accueil
+
+{{ app.session.flashbag.get('notice')|last }}
+
+<h1>Home page</h1>
 {% endblock %}
