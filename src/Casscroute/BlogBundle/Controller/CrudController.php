@@ -39,14 +39,22 @@ class CrudController extends Controller
             $em->persist($post);
             $em->flush();
 
-            $request-> getSession()->getFlashBag()->add('notice', 'Post bien modifié.');
+            $request->getSession()->getFlashBag()->add('notice', 'Post bien modifié.');
         }
 
         return $this->render('CasscrouteBlogBundle:Crud:edit.html.twig', array('form' => $form->createView()));
     }
 
-    public function deleteAction($id)
+    public function deleteAction($id, Request $request)
     {
-        return $this->render('CasscrouteBlogBundle:Blog:post.html.twig', array('id' => $id));
+        $em = $this->getDoctrine()->getManager();
+        $postRepository = $em->getRepository('CasscrouteBlogBundle:Post');
+        $post = $postRepository->find($id);
+        $em->remove($post);
+        $em->flush();
+
+        $request->getSession()->getFlashBag()->add('notice', 'Post bien supprimé.');
+
+        return $this->render('CasscrouteBlogBundle:Blog:index.html.twig');
     }
 }

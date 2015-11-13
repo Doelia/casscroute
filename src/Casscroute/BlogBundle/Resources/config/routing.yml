@@ -5,6 +5,8 @@ casscroute_blog_homepage:
 casscroute_blog_post:
     path:     /post/{id}
     defaults: { _controller: CasscrouteBlogBundle:Blog:post }
+    requirements:
+        id: \d+
 
 casscroute_crud_new:
     path:     /new
@@ -13,5 +15,11 @@ casscroute_crud_new:
 casscroute_crud_edit:
     path:     /edit/{id}
     defaults: { _controller: CasscrouteBlogBundle:Crud:edit }
+    requirements:
+        id: \d+
+
+casscroute_crud_delete:
+    path:       /delete/{id}
+    defaults:   { _controller: CasscrouteBlogBundle:Crud:delete }
     requirements:
         id: \d+
