@@ -19,9 +19,10 @@ class PostType extends AbstractType
             ->add('urlAlias')
             ->add('content')
             ->add('published')
+            ->add('save', 'submit')
         ;
     }
-    
+
     /**
      * @param OptionsResolverInterface $resolver
      */
