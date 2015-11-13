@@ -9,3 +9,9 @@ casscroute_blog_post:
 casscroute_crud_new:
     path:     /new
     defaults: { _controller: CasscrouteBlogBundle:Crud:new }
+
+casscroute_crud_edit:
+    path:     /edit/{id}
+    defaults: { _controller: CasscrouteBlogBundle:Crud:edit }
+    requirements:
+        id: \d+
