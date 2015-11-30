@@ -15,7 +15,7 @@ class LoadPost implements FixtureInterface
         {
             $post = new Post();
             $post->setTitle("titre " . $i);
-            $post->setUrlAlias("alias " . $i);
+            $post->setUrlAliasSlugified($post->getTitle());
             $post->setContent("contenu " . $i);
             $post->setPublished(new \DateTime("2015-01-01 10:00:" . $i));
             $manager->persist($post);
