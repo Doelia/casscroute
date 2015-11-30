@@ -6,6 +6,10 @@ casscroute_blog_post:
     path:     /post/{alias}
     defaults: { _controller: CasscrouteBlogBundle:Blog:post }
 
+casscroute_blog_listpost:
+    path:     /page/{page}
+    defaults: { _controller: CasscrouteBlogBundle:Blog:index }
+
 casscroute_crud_new:
     path:     /new
     defaults: { _controller: CasscrouteBlogBundle:Crud:new }

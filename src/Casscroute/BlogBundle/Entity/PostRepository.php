@@ -1,6 +1,7 @@
 <?php
 
 namespace Casscroute\BlogBundle\Entity;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 
 /**
  * PostRepository
@@ -10,4 +11,13 @@ namespace Casscroute\BlogBundle\Entity;
  */
 class PostRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getPosts($page, $numberPerPage)
+    {
+        $query = $this->createQueryBuilder('p')->getQuery();
+        $query
+            ->setFirstResult(($page-1) * $numberPerPage)
+            ->setMaxResults($numberPerPage)
+        ;
+        return new Paginator($query, true);
+    }
 }

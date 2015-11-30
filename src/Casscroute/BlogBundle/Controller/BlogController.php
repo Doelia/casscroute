@@ -6,12 +6,23 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class BlogController extends Controller
 {
-    public function indexAction()
+    public function indexAction($page = 1)
     {
         $em = $this->getDoctrine()->getManager();
         $postRepository = $em->getRepository('CasscrouteBlogBundle:Post');
-        $posts = $postRepository->findAll();
-        return $this->render('CasscrouteBlogBundle:Blog:index.html.twig', array('posts' => $posts));
+        $numberPerPage = 10;
+        $posts = $postRepository->getPosts($page, $numberPerPage);
+        $nbPages = ceil(count($posts)/$numberPerPage);
+
+        if ($page > $nbPages) {
+          throw $this->createNotFoundException("La page ".$page." n'existe pas.");
+        }
+
+        return $this->render('CasscrouteBlogBundle:Blog:index.html.twig', array(
+            'posts'   => $posts,
+            'nbPages' => $nbPages,
+            'page'    => $page
+        ));
     }
 
     public function postAction($alias)

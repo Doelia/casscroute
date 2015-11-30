@@ -7,6 +7,9 @@
 
     <h1>Home page</h1>
 
+    <p>Nombre de pages: {{ nbPages }}<p>
+    <p>Page actuelle: {{ page }}</p>
+
     {% for post in posts %}
         <div>
             <h2>{{ post.title }}</h2>
