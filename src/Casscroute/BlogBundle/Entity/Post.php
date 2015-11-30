@@ -155,4 +155,46 @@ class Post
     {
         return $this->published;
     }
+
+    /**
+     * Slugify a string
+     *
+     * @param string $url
+     *
+     * @return string
+     */
+    private static function slugify($url)
+    {
+        # Prep string with some basic normalization
+        $url = strtolower($url);
+        $url = strip_tags($url);
+        $url = stripslashes($url);
+        $url = html_entity_decode($url);
+
+        # Remove quotes (can't, etc.)
+        $url = str_replace('\'', '', $url);
+
+        # Replace non-alpha numeric with hyphens
+        $match = '/[^a-z0-9]+/';
+        $replace = '-';
+        $url = preg_replace($match, $replace, $url);
+
+        $url = trim($url, '-');
+
+        return $url;
+    }
+
+    /**
+     * Set urlAlias after slugifying it
+     *
+     * @param string $url
+     *
+     * @return Post
+     */
+    public function setUrlAliasSlugified($url)
+    {
+        $this->setUrlAlias(Post::slugify($url));
+
+        return $this;
+    }
 }

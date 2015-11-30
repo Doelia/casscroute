@@ -16,6 +16,8 @@ class CrudController extends Controller
 
         if ($form->handleRequest($request)->isValid())
         {
+            $post->setUrlAliasSlugified($post->getTitle());
+            $post->setPublished(new \DateTime('NOW'));
             $em = $this->getDoctrine()->getManager();
             $em->persist($post);
             $em->flush();
@@ -66,7 +68,5 @@ class CrudController extends Controller
         }
 
         return $this->render('CasscrouteBlogBundle:Blog:index.html.twig');
-
-
     }
 }
