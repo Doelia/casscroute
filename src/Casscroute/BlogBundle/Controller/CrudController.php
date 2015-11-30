@@ -27,7 +27,7 @@ class CrudController extends Controller
             $em->flush();
 
             $request-> getSession()->getFlashBag()->add('notice', 'Post bien enregistré.');
-            return $this->redirect($this->generateUrl('casscroute_blog_post', array('id' => $post->getId())));
+            return $this->redirect($this->generateUrl('casscroute_blog_post', array('alias' => $post->getUrlAlias())));
         }
 
         return $this->render('CasscrouteBlogBundle:Crud:new.html.twig', array('form' => $form->createView()));
@@ -57,7 +57,7 @@ class CrudController extends Controller
             $em->flush();
 
             $request->getSession()->getFlashBag()->add('notice', 'Post bien modifié.');
-            return $this->redirect($this->generateUrl('casscroute_blog_post', array('id' => $post->getId())));
+            return $this->redirect($this->generateUrl('casscroute_blog_post', array('alias' => $post->getUrlAlias())));
         }
 
         return $this->render('CasscrouteBlogBundle:Crud:edit.html.twig', array('form' => $form->createView()));
