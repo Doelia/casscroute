@@ -68,6 +68,7 @@ class CrudController extends Controller
             $request->getSession()->getFlashBag()->add('error', "Ce post n'existe pas.");
         }
 
-        return $this->render('CasscrouteBlogBundle:Blog:index.html.twig');
+        $posts = $postRepository->findAll();
+        return $this->render('CasscrouteBlogBundle:Blog:index.html.twig', array('posts' => $posts));
     }
 }
