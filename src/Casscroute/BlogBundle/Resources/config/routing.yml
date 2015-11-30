@@ -3,23 +3,17 @@ casscroute_blog_homepage:
     defaults: { _controller: CasscrouteBlogBundle:Blog:index }
 
 casscroute_blog_post:
-    path:     /post/{id}
+    path:     /post/{alias}
     defaults: { _controller: CasscrouteBlogBundle:Blog:post }
-    requirements:
-        id: \d+
 
 casscroute_crud_new:
     path:     /new
     defaults: { _controller: CasscrouteBlogBundle:Crud:new }
 
 casscroute_crud_edit:
-    path:     /edit/{id}
+    path:     /edit/{alias}
     defaults: { _controller: CasscrouteBlogBundle:Crud:edit }
-    requirements:
-        id: \d+
 
 casscroute_crud_delete:
-    path:       /delete/{id}
+    path:       /delete/{alias}
     defaults:   { _controller: CasscrouteBlogBundle:Crud:delete }
-    requirements:
-        id: \d+

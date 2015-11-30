@@ -14,11 +14,12 @@ class BlogController extends Controller
         return $this->render('CasscrouteBlogBundle:Blog:index.html.twig', array('posts' => $posts));
     }
 
-    public function postAction($id)
+    public function postAction($alias)
     {
         $em = $this->getDoctrine()->getManager();
         $postRepository = $em->getRepository('CasscrouteBlogBundle:Post');
-        $post = $postRepository->find($id);
+        $post = $postRepository->findOneByUrlAlias($alias);
+
         return $this->render('CasscrouteBlogBundle:Blog:post.html.twig', array('post' => $post));
     }
 }
