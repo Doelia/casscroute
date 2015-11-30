@@ -1,7 +1,11 @@
 # TODO
 
-- Formulaires pour les posts :
-    - Renommer les champs
-    - Ne pas afficher la date de publication (mise à jour automatique, pas de changement date à la modification)
+- protection des routes CRUD
+- pagination articles
+- faire un panneau d'administration pour accéder aux CRUD
+- /post/id ou /post/alias ?
+- faire le design
+- habiller connexion / inscription
+- Slugify : remplacer les accents (é => e)
 - Précréer un compte admin
-- Controller get : récupérer à partir de l'alias
+- vérifier HTML5 semantique / valide
