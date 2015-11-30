@@ -43,6 +43,7 @@ class CrudController extends Controller
 
         if ($form->handleRequest($request)->isValid())
         {
+            $post->setUrlAliasSlugified($post->getTitle());
             $em = $this->getDoctrine()->getManager();
             $em->persist($post);
             $em->flush();
