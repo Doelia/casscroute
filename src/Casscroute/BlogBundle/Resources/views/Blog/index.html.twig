@@ -5,18 +5,49 @@
     {{ app.session.flashbag.get('notice')|last }}
     {{ app.session.flashbag.get('error')|last }}
 
-    <h1>Home page</h1>
+    <h1>Casscroute Blog</h1>
 
     <p>Nombre de pages: {{ nbPages }}<p>
     <p>Page actuelle: {{ page }}</p>
 
     {% for post in posts %}
         <div>
-            <h2>{{ post.title }}</h2>
-            <p>alias: {{post.urlAlias }}</p>
-            <p>published: {{post.published|date('y-m-d') }}</p>
-            <p>{{ post.content[:30] }}</p>
+            <h2 class="ui header">
+              <i class="calendar icon"></i>
+              <div class="content">
+                {{ post.title }}
+                <div class="sub header">Publié le {{post.published|date('y-m-d') }}</div>
+              </div>
+            </h2>
+            <p>
+                {{ post.content[:30] }}
+            </p>
+            <div class="">
+                <a href="{{path('casscroute_blog_post', {'alias': post.urlAlias}) }}" class="ui primary button small">Lire la suite</a>
+                <button class="ui button small ttip" data-title="Lien de partage" data-html="<div class='header'>Lien de partage</div><div class='content'><div class='ui mini input'><input value='{{path('casscroute_blog_post', {'alias': post.urlAlias}) }}'/></div></div></div>">
+                    <i class="fa fa-link"></i>
+                </button>
+            </div>
         <div>
+        <div class="ui divider"></div>
     {% endfor %}
+
+    <div class="ui pagination menu">
+      <a class="active item">
+        1
+      </a>
+      <div class="disabled item">
+        ...
+      </div>
+      <a class="item">
+        10
+      </a>
+      <a class="item">
+        11
+      </a>
+      <a class="item">
+        12
+      </a>
+    </div>
 
 {% endblock %}
