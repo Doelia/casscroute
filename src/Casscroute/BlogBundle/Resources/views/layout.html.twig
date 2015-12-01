@@ -10,6 +10,16 @@
 {% block javascripts %}
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
+
+    <script type="text/javascript">
+    $(function() {
+        $('.ttip').popup({
+    on: 'click'
+}); // Activation des tooltips
+        $('.ui.dropdown').dropdown();
+    });
+    </script>
+
 {% endblock %}
 
 {% block body %}
@@ -25,8 +35,14 @@
                 <a class="item" href="{{path('fos_user_security_logout')}}">
                     <i class="fa fa-sign-out"></i>
                 </a>
+            {% else %}
+                <a class="item" href="{{path('fos_user_security_login')}}">
+                    <i class="fa fa-sign-in"></i> Connexion
+                </a>
             {% endif %}
         </div>
     </div>
-    {% block blog_body %}{% endblock %}
+    <div class="ui container">
+        {% block blog_body %}{% endblock %}
+    </div>
 {% endblock %}
