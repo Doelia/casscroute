@@ -1,8 +1,7 @@
 # TODO
-- Protection des routes CRUD
+
 - Pagination articles dans les templates
 - Faire un panneau d'administration pour accéder aux CRUD
-- /post/id ou /post/alias ?
 - Faire le design
     - Liste des posts
     - Connexion / inscription
