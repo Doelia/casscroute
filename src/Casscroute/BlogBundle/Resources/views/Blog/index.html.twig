@@ -7,9 +7,6 @@
 
     <h1>Casscroute Blog</h1>
 
-    <p>Nombre de pages: {{ nbPages }}<p>
-    <p>Page actuelle: {{ page }}</p>
-
     {% for post in posts %}
         <div>
             <h2 class="ui header">
@@ -33,21 +30,11 @@
     {% endfor %}
 
     <div class="ui pagination menu">
-      <a class="active item">
-        1
-      </a>
-      <div class="disabled item">
-        ...
-      </div>
-      <a class="item">
-        10
-      </a>
-      <a class="item">
-        11
-      </a>
-      <a class="item">
-        12
-      </a>
+      {% for i in 1 .. nbPages %}
+          <a class="item {% if i == page %}active{% endif %}" href="{{path('casscroute_blog_listpost', {'page': i})}}">
+            {{i}}
+          </a>
+      {% endfor %}
     </div>
 
 {% endblock %}
