@@ -14,9 +14,6 @@
 {% endblock %}
 
 {% block body %}
-{% if error %}
-    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-{% endif %}
 <div id="interface">
     <div class="ui middle aligned center aligned grid">
         <div class="column">
@@ -28,6 +25,14 @@
             <form class="ui large form" action="{{ path("fos_user_security_check") }}" method="post">
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
                 <div class="ui stacked segment">
+                    {% if error %}
+                    <div class="ui negative message">
+                        <i class="close icon"></i>
+                        <div class="header">
+                            {{ error.messageKey|trans(error.messageData, 'security') }}
+                        </div>
+                    </div>
+                    {% endif %}
                     <div class="field">
                       <div class="ui left icon input">
                           <i class="user icon"></i>
@@ -44,7 +49,7 @@
                         <input class="hidden" type="checkbox" tabindex="0" id="remember_me" name="_remember_me" value="on" />
                         <label style="text-align:left" for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
                     </div>
-                    <div class="ui fluid large teal submit button">{{ 'security.login.submit'|trans }}</div>
+                    <input type="submit" class="ui fluid large teal submit button" value="{{ 'security.login.submit'|trans }}"/>
                 </div>
             </form>
         </div>
