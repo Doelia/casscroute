@@ -6,12 +6,12 @@
         <div class="right menu">
             {% if is_granted("ROLE_USER")%}
                 <div class="item">
-                    Bonjour {{app.user.username}}
+                    <a class="ui button green" href="{{path('casscroute_crud_new')}}">
+                        <i class="fa fa-plus pr"></i> Ajouter un article
+                    </a>
                 </div>
                 <div class="item">
-                    <a class="ui button green" href="{{path('casscroute_crud_new')}}">
-                        <i class="fa fa-plus pr"></i> Créer un article
-                    </a>
+                    <i class="fa fa-child pr"></i> Bonjour {{app.user.username}}
                 </div>
                 <a class="item ttip ncl" data-content="Se déconnecter" href="{{path('fos_user_security_logout')}}">
                     <i class="fa fa-sign-out"></i>
