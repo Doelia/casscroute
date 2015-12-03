@@ -30,21 +30,17 @@
     {% endfor %}
 
     <div class="ui pagination menu">
-        {% if page != 1 %}
-            <a class="icon item" href="{{path('casscroute_blog_listpost', {'page': page-1})}}">
-                <i class="left arrow icon"></i>
-            </a>
-        {% endif %}
+        <a class="icon item {% if page == 1 %} disabled {% endif %}" href="{{path('casscroute_blog_listpost', {'page': page-1})}}">
+            <i class="left arrow icon"></i>
+        </a>
         {% for i in 1 .. nbPages %}
             <a class="item {% if i == page %}active{% endif %}" href="{{path('casscroute_blog_listpost', {'page': i})}}">
                 {{i}}
             </a>
         {% endfor %}
-        {% if page < nbPages %}
-            <a class="icon item" href="{{path('casscroute_blog_listpost', {'page': page+1})}}">
-                <i class="right arrow icon"></i>
-            </a>
-        {% endif %}
+        <a class="icon item {% if page == nbPages %} disabled {% endif %} " href="{{path('casscroute_blog_listpost', {'page': page+1})}}">
+            <i class="right arrow icon"></i>
+        </a>
     </div>
 
 {% endblock %}
