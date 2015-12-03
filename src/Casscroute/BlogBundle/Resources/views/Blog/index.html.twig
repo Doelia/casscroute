@@ -6,17 +6,15 @@
     {{ app.session.flashbag.get('error')|last }}
 
     <div class="ui inverted vertical masthead center aligned segment">
-
-    <div class="ui text container">
-      <h1 class="ui inverted header">
-        Casscroute Blog
-      </h1>
-      <h2>Le générateur de sandwich.</h2>
+        <div class="ui text container">
+            <h1 class="ui inverted header">
+                Casscroute Blog
+            </h1>
+            <h2>Le générateur de sandwich.</h2>
+        </div>
     </div>
 
-  </div>
-
-    <h1 style="margin-bottom: 30px;">Liste des articles</h1>
+    <h1 style="margin-bottom: 30px;">Derniers articles</h1>
 
     {% for post in posts %}
         {% set fullRender = false %}
