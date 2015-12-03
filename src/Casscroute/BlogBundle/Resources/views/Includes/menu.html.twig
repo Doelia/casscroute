@@ -1,0 +1,26 @@
+<div class="ui fixed inverted menu">
+    <div class="container ui">
+        <div class="header item">
+            <a href="{{path('casscroute_blog_homepage')}}">
+                <i class="fa fa-home pd"></i> Casscroute Blog
+            </a>
+        </div>
+        <div class="right menu">
+            {% if is_granted("ROLE_USER")%}
+                <div class="item">
+                    Bonjour {{app.user.username}}
+                </div>
+                <a class="item" href="{{path('fos_user_security_logout')}}">
+                    <i class="fa fa-sign-out"></i>
+                </a>
+            {% else %}
+                <a class="item" href="{{path('fos_user_security_login')}}">
+                    <i class="fa fa-sign-in pr"></i> Connexion
+                </a>
+                <a class="item" href="{{path('fos_user_security_login')}}">
+                    <i class="fa fa-child pr"></i> Inscription
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</div>

@@ -1,9 +1,12 @@
 <div>
     <h2 class="ui header">
-      <i class="calendar icon"></i>
+      <i class="feed icon"></i>
       <div class="content">
         {{ post.title }}
-        <div class="sub header">Publié le {{post.published|date('y-m-d') }}</div>
+        <div class="sub header">
+            <i class="fa fa-calendar pd"></i>
+            Publié le {{post.published|date('y-m-d') }}
+        </div>
       </div>
     </h2>
     <p>
