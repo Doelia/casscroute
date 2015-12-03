@@ -30,7 +30,9 @@ class BlogController extends Controller
         $em = $this->getDoctrine()->getManager();
         $postRepository = $em->getRepository('CasscrouteBlogBundle:Post');
         $post = $postRepository->findOneByUrlAlias($alias);
-
+        if (!$post) {
+            throw $this->createNotFoundException('Le Post n\'existe pas.');
+        }
         return $this->render('CasscrouteBlogBundle:Blog:post.html.twig', array('post' => $post));
     }
 }
