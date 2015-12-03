@@ -10,7 +10,7 @@ class BlogController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $postRepository = $em->getRepository('CasscrouteBlogBundle:Post');
-        $numberPerPage = 10;
+        $numberPerPage = 4;
         $posts = $postRepository->getPosts($page, $numberPerPage);
         $nbPages = ceil(count($posts)/$numberPerPage);
 

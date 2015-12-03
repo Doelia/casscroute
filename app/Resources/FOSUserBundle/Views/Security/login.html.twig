@@ -1,23 +1,13 @@
-{% extends "::base.html.twig" %}
+{% extends "CasscrouteBlogBundle::layout.html.twig" %}
 
 {% trans_default_domain 'FOSUserBundle' %}
 
-{% block stylesheets %}
-    <link rel="stylesheet" type="text/css" class="ui" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{asset('css/style.css') }}">
-{% endblock %}
-
-{% block javascripts %}
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
-{% endblock %}
-
 {% block body %}
+{% include "CasscrouteBlogBundle:Includes:menu.html.twig" %}
 <div id="interface">
     <div class="ui middle aligned center aligned grid">
         <div class="column">
-            <h2 class="ui teal image header">
+            <h2 class="ui blue image header">
                 <div class="content">
                     Connexion
                 </div>
@@ -27,7 +17,6 @@
                 <div class="ui stacked segment">
                     {% if error %}
                     <div class="ui negative message">
-                        <i class="close icon"></i>
                         <div class="header">
                             {{ error.messageKey|trans(error.messageData, 'security') }}
                         </div>
@@ -49,7 +38,7 @@
                         <input class="hidden" type="checkbox" tabindex="0" id="remember_me" name="_remember_me" value="on" />
                         <label style="text-align:left" for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
                     </div>
-                    <input type="submit" class="ui fluid large teal submit button" value="{{ 'security.login.submit'|trans }}"/>
+                    <input type="submit" class="ui fluid large blue submit button" value="{{ 'security.login.submit'|trans }}"/>
                 </div>
             </form>
         </div>

@@ -22,7 +22,6 @@ body {
 }
 #interface {
     height: 100%;
-    background-color: #DADADA;
 }
 #interface > .grid{
     height: 100%;
