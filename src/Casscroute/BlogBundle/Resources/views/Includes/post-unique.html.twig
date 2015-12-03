@@ -1,8 +1,8 @@
 <div>
     <h2 class="ui header">
-      <!-- <i class="feed icon"></i> -->
+      <i class="spoon icon"></i>
       <div class="content">
-        {{ post.title }}
+        <a href="{{path('casscroute_blog_post', {'alias': post.urlAlias}) }}" class="titleArticle">{{ post.title }}</a>
         <div class="sub header">
             <i class="fa fa-calendar pd"></i>
             Publié le {{post.published|date('y-m-d') }}
@@ -19,11 +19,19 @@
     <div class="">
 
         {% if not fullRender %}
-        <a href="{{path('casscroute_blog_post', {'alias': post.urlAlias}) }}" class="ui primary button small">Lire la suite</a>
+        <a href="{{path('casscroute_blog_post', {'alias': post.urlAlias}) }}" class="ui primary button small">
+            <i class="fa fa-play pr"></i> Lire la suite
+        </a>
         {% endif %}
 
-        <button class="ui button small ttip" data-title="Lien de partage" data-html="<div class='header'>Lien de partage</div><div class='content'><div class='ui mini input'><input value='{{app.request.getSchemeAndHttpHost() ~ path('casscroute_blog_post', {'alias': post.urlAlias}) }}'/></div></div></div>">
-            <i class="fa fa-link"></i>
+        <button class="ui button small ttip cl" data-title="Lien de partage" data-html="<div class='header'>Lien de partage</div><div class='content'><div class='ui mini input'><input value='{{app.request.getSchemeAndHttpHost() ~ path('casscroute_blog_post', {'alias': post.urlAlias}) }}'/></div></div></div>">
+            <i class="fa fa-link pr"></i> Partage
         </button>
+
+        {% if is_granted("ROLE_ADMIN")%}
+        <a href="{{path('casscroute_crud_edit', {'alias': post.urlAlias}) }}" class="ui green button small"><i class="fa fa-edit pr"></i> Modifier</a>
+        <a href="{{path('casscroute_crud_delete', {'alias': post.urlAlias}) }}" class="ui red button small"><i class="fa fa-times pr"></i> Supprimer</a>
+        {% endif %}
+
     </div>
 <div>

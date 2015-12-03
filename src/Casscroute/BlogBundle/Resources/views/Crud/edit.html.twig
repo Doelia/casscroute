@@ -1,1 +1,24 @@
-{{ form(form) }}
+{% extends "CasscrouteBlogBundle::layout.html.twig" %}
+
+{% block blog_body %}
+    <h2>Edition d'un article</h2>
+
+	<br>
+
+    {{ form_start(form, {'attr': {'class': 'ui form'}}) }}
+    <div class="ui negative message">
+        {{ form_errors(form) }}
+    </div>
+      <div class="field">
+        <label>Titre de l'article</label>
+        {{ form_widget(form.title, {'attr': {'class': 'form-control'}})  }}
+      </div>
+      <div class="field">
+        <label>Contenu</label>
+        {{ form_widget(form.content, {'attr': {'class': 'form-control'}})  }}
+      </div>
+      {{ form_widget(form.Enregistrer, {'attr': {'class': 'ui button'}}) }}
+    </form>
+    {{ form_end(form) }}
+
+{% endblock %}

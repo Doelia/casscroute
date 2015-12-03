@@ -1,1 +1,6 @@
-{{ form(form) }}
+{% extends "CasscrouteBlogBundle::layout.html.twig" %}
+
+{% block blog_body %}
+    <h2>Création d'un article</h2>
+    {{ form(form) }}
+{% endblock %}

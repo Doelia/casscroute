@@ -4,7 +4,10 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-    {{ form_widget(form) }}
+    {{ form_widget(form.username) }}
+    {{ form_widget(form.email) }}
+    {{ form_widget(form.plainPassword) }}
+    <!-- apres tu peux faire des trucs comme ça pour mettre des classes : form_widget(form.submit, {'attr': {'class': 'btn btn-primary'}})  -->
     <div>
         <input type="submit" value="{{ 'registration.submit'|trans }}" />
     </div>

@@ -8,14 +8,14 @@
                 <div class="item">
                     Bonjour {{app.user.username}}
                 </div>
-                <a class="item" href="{{path('fos_user_security_logout')}}">
+                <a class="item ttip ncl" data-content="Se déconnecter" href="{{path('fos_user_security_logout')}}">
                     <i class="fa fa-sign-out"></i>
                 </a>
             {% else %}
                 <a class="item" href="{{path('fos_user_security_login')}}">
                     <i class="fa fa-sign-in pr"></i> Connexion
                 </a>
-                <a class="item" href="{{path('fos_user_security_login')}}">
+                <a class="item" href="{{path('fos_user_registration_register')}}">
                     <i class="fa fa-child pr"></i> Inscription
                 </a>
             {% endif %}
