@@ -3,13 +3,14 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block body %}
+    {% include "CasscrouteBlogBundle:Includes:menu.html.twig" %}
     {% if error %}
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
     <div id="interface">
         <div class="ui middle aligned center aligned grid">
             <div class="column">
-                <h2 class="ui teal image header">
+                <h2 class="ui blue image header">
                     <div class="content">
                         Connexion
                     </div>
@@ -33,7 +34,7 @@
                             <input class="hidden" type="checkbox" tabindex="0" id="remember_me" name="_remember_me" value="on" />
                             <label style="text-align:left" for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
                         </div>
-                        <div class="ui fluid large teal submit button">{{ 'security.login.submit'|trans }}</div>
+                        <div class="ui fluid large blue submit button">{{ 'security.login.submit'|trans }}</div>
                     </div>
                 </form>
             </div>
