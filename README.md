@@ -15,6 +15,11 @@ composer update
 php app/console server:run
 ```
 
+## Lancer le serveur en mode ProductBundle
+```
+php app/console server:run --env=prod
+```
+
 ## Générer un Bundle
 ```
 php app/console generate:bundle --namespace=Author/ProductBundle --format=yml
