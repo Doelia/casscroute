@@ -7,21 +7,20 @@
     <div class="ui inverted vertical masthead center aligned segment">
         <div class="ui text container">
             <h1 class="ui inverted header">
-                Casscroute Blog
+                <a href="{{path('casscroute_blog_homepage')}}">Casscroute Blog</a>
             </h1>
             <h2>Le générateur de sandwich.</h2>
         </div>
     </div>
 
-    <h1 style="margin-bottom: 30px;">Derniers articles</h1>
-
     {% for post in posts %}
         {% set fullRender = false %}
         {% include "CasscrouteBlogBundle:Includes:post-unique.html.twig" %}
-        <div class="ui divider"></div>
+        <div class="ui divider post"></div>
     {% endfor %}
 
-    <div class="ui pagination menu center aligned">
+    <div class="ui center aligned basic segment">
+    <div class="ui pagination menu">
         <a class="icon item {% if page == 1 %} disabled" {% else %} " href="{{path('casscroute_blog_listpost', {'page': page-1})}}"{% endif %}>
             <i class="left arrow icon"></i>
         </a>
@@ -33,6 +32,7 @@
         <a class="icon item {% if page == nbPages %} disabled" {% else %} " href="{{path('casscroute_blog_listpost', {'page': page+1})}}"{% endif %}>
             <i class="right arrow icon"></i>
         </a>
+    </div>
     </div>
 
 {% endblock %}

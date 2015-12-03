@@ -4,7 +4,7 @@
       <div class="content">
         <a href="{{path('casscroute_blog_post', {'alias': post.urlAlias}) }}" class="titleArticle">{{ post.title }}</a>
         <div class="sub header">
-            <i class="fa fa-calendar pd"></i>
+            <i class="fa fa-calendar"></i>
             Publié le {{post.published|date('y-m-d') }}
         </div>
       </div>
@@ -25,7 +25,7 @@
         {% endif %}
 
         <button class="ui button small ttip cl" data-title="Lien de partage" data-html="<div class='header'>Lien de partage</div><div class='content'><div class='ui mini input'><input value='{{app.request.getSchemeAndHttpHost() ~ path('casscroute_blog_post', {'alias': post.urlAlias}) }}'/></div></div></div>">
-            <i class="fa fa-link pr"></i> Partage
+            <i class="fa fa-link pr"></i> Partager
         </button>
 
         {% if is_granted("ROLE_ADMIN")%}

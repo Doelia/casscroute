@@ -8,6 +8,11 @@
                 <div class="item">
                     Bonjour {{app.user.username}}
                 </div>
+                <div class="item">
+                    <a class="ui button green" href="{{path('casscroute_crud_new')}}">
+                        <i class="fa fa-plus pr"></i> Créer un article
+                    </a>
+                </div>
                 <a class="item ttip ncl" data-content="Se déconnecter" href="{{path('fos_user_security_logout')}}">
                     <i class="fa fa-sign-out"></i>
                 </a>

@@ -35,3 +35,13 @@ body {
 .titleArticle {
     color: black;
 }
+.divider.post {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.ui.vertical.segment.masthead {
+    margin-bottom: 30px;
+}
+.masthead h1 a {
+    color: white;
+}

@@ -1,6 +1,22 @@
 {% extends "CasscrouteBlogBundle::layout.html.twig" %}
 
 {% block blog_body %}
-    <h2>Création d'un article</h2>
-    {{ form(form) }}
+    {% block crud_title %}<h2>Création d'un article</h2>{% endblock %}
+
+    {{ form_start(form, {'attr': {'class': 'ui form'}}) }}
+    <div class="ui negative message">
+        {{ form_errors(form) }}
+    </div>
+      <div class="field">
+        <label>Titre de l'article</label>
+        {{ form_widget(form.title, {'attr': {'class': 'form-control'}})  }}
+      </div>
+      <div class="field">
+        <label>Contenu</label>
+        {{ form_widget(form.content, {'attr': {'class': 'form-control'}})  }}
+      </div>
+      {{ form_widget(form.Enregistrer, {'attr': {'class': 'ui button primary'}}) }}
+      <a href="#" class="ui button back">Annuler</a>
+    {{ form_end(form) }}
+
 {% endblock %}
