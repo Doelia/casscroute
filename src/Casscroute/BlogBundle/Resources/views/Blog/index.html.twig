@@ -8,24 +8,8 @@
     <h1>Casscroute Blog</h1>
 
     {% for post in posts %}
-        <div>
-            <h2 class="ui header">
-              <i class="calendar icon"></i>
-              <div class="content">
-                {{ post.title }}
-                <div class="sub header">Publié le {{post.published|date('y-m-d') }}</div>
-              </div>
-            </h2>
-            <p>
-                {{ post.content[:30] }}
-            </p>
-            <div class="">
-                <a href="{{path('casscroute_blog_post', {'alias': post.urlAlias}) }}" class="ui primary button small">Lire la suite</a>
-                <button class="ui button small ttip" data-title="Lien de partage" data-html="<div class='header'>Lien de partage</div><div class='content'><div class='ui mini input'><input value='{{path('casscroute_blog_post', {'alias': post.urlAlias}) }}'/></div></div></div>">
-                    <i class="fa fa-link"></i>
-                </button>
-            </div>
-        <div>
+        {% set fullRender = false %}
+        {% include "CasscrouteBlogBundle:Blog:post-unique.html.twig" %}
         <div class="ui divider"></div>
     {% endfor %}
 
