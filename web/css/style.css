@@ -18,3 +18,16 @@ body {
 .pr {
     padding-right: 10px;
 }
+#interface {
+    height: 100%;
+    background-color: #DADADA;
+}
+#interface > .grid{
+    height: 100%;
+}
+.column{
+    max-width: 450px;
+}
+#checkbox_login{
+    margin-bottom: 17px;
+}
