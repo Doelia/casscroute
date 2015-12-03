@@ -1,5 +1,6 @@
 {% extends "CasscrouteBlogBundle::layout.html.twig" %}
 
 {% block blog_body %}
-  Post {{ post.id }}
+    {% set fullRender = true %}
+    {% include "CasscrouteBlogBundle:Blog:post-unique.html.twig" %}
 {% endblock %}

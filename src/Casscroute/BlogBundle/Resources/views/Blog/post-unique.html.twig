@@ -1,0 +1,26 @@
+<div>
+    <h2 class="ui header">
+      <i class="calendar icon"></i>
+      <div class="content">
+        {{ post.title }}
+        <div class="sub header">Publié le {{post.published|date('y-m-d') }}</div>
+      </div>
+    </h2>
+    <p>
+        {% if fullRender %}
+            {{ post.content }}
+        {% else %}
+            {{ post.content[:30] }}
+        {% endif %}
+    </p>
+    <div class="">
+
+        {% if not fullRender %}
+        <a href="{{path('casscroute_blog_post', {'alias': post.urlAlias}) }}" class="ui primary button small">Lire la suite</a>
+        {% endif %}
+
+        <button class="ui button small ttip" data-title="Lien de partage" data-html="<div class='header'>Lien de partage</div><div class='content'><div class='ui mini input'><input value='{{path('casscroute_blog_post', {'alias': post.urlAlias}) }}'/></div></div></div>">
+            <i class="fa fa-link"></i>
+        </button>
+    </div>
+<div>
