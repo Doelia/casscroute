@@ -6,29 +6,6 @@
     <link rel="stylesheet" type="text/css" class="ui" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{asset('css/style.css') }}">
-
-    <style type="text/css">
-    body {
-        background-color: #FFFFFF;
-    }
-    .ui.menu .item img.logo {
-        margin-right: 1.5em;
-    }
-    .main.container {
-        margin-top: 7em;
-        margin-bottom: 4em;
-    }
-    .wireframe {
-        margin-top: 2em;
-    }
-    .ui.footer.segment {
-        margin: 5em 0em 0em;
-        padding: 5em 0em;
-    }
-    .pr {
-        padding-right: 10px;
-    }
-    </style>
 {% endblock %}
 
 {% block javascripts %}
@@ -45,27 +22,7 @@
 {% endblock %}
 
 {% block body %}
-    <div class="ui fixed inverted menu">
-        <div class="container ui">
-            <div class="header item">
-                <a href="{{path('casscroute_blog_homepage')}}">Casscroute Blog</a>
-            </div>
-            <div class="right menu">
-                {% if is_granted("ROLE_USER")%}
-                    <div class="item">
-                        Bonjour {{app.user.username}}
-                    </div>
-                    <a class="item" href="{{path('fos_user_security_logout')}}">
-                        <i class="fa fa-sign-out"></i>
-                    </a>
-                {% else %}
-                    <a class="item" href="{{path('fos_user_security_login')}}">
-                        <i class="fa fa-sign-in pr"></i> Connexion
-                    </a>
-                {% endif %}
-            </div>
-        </div>
-    </div>
+    {% include "CasscrouteBlogBundle:Includes:menu.html.twig" %}
     <div class="ui main text container">
         {% block blog_body %}{% endblock %}
     </div>
