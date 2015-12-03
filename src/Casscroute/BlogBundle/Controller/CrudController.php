@@ -59,7 +59,7 @@ class CrudController extends Controller
             $em->persist($post);
             $em->flush();
 
-            $request->getSession()->getFlashBag()->add('notice', 'Post bien modifié.');
+            $request->getSession()->getFlashBag()->add('notice', 'Le post a été modifié.');
             return $this->redirect($this->generateUrl('casscroute_blog_post', array('alias' => $post->getUrlAlias())));
         }
 
@@ -81,7 +81,7 @@ class CrudController extends Controller
         if ($post != null) {
             $em->remove($post);
             $em->flush();
-            $request->getSession()->getFlashBag()->add('notice', 'Post bien supprimé.');
+            $request->getSession()->getFlashBag()->add('notice', 'Le post a été supprimé.');
         } else {
             $request->getSession()->getFlashBag()->add('error', "Ce post n'existe pas.");
         }
