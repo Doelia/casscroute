@@ -1,6 +1,14 @@
 {% extends "CasscrouteBlogBundle::layout.html.twig" %}
 
 {% block blog_body %}
+    {% set notice = app.session.flashbag.get('notice')|last %}
+    {% if notice is not empty %}
+    <div class="ui positive message">
+         <div class="header">
+             {{ notice }}
+         </div>
+     </div>
+     {% endif %}
     <a href="{{path('casscroute_blog_homepage')}}" class="button primary">
         <i class="fa fa-chevron-circle-left pr"></i>Retour à la liste des articles
     </a>

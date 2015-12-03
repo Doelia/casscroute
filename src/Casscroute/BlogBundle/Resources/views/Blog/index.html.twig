@@ -1,9 +1,24 @@
 {% extends "CasscrouteBlogBundle::layout.html.twig" %}
 
 {% block blog_body %}
-
-    {{ app.session.flashbag.get('notice')|last }}
-    {{ app.session.flashbag.get('error')|last }}
+    {% set notice = app.session.flashbag.get('notice')|last %}
+    {% if notice is not empty %}
+    <div class="ui positive message">
+         <div class="header">
+             Bravo!
+         </div>
+         {{ notice }}
+     </div>
+     {% endif %}
+     {% set error = app.session.flashbag.get('notice')|last %}
+     {% if error is not empty %}
+    <div class="ui negative message">
+        <div class="header">
+            Zut alors...
+        </div>
+        {{ error }}
+    </div>
+    {% endif %}
 
     <div class="ui inverted vertical masthead center aligned segment">
         <div class="ui text container">
@@ -22,7 +37,7 @@
         <div class="ui divider"></div>
     {% endfor %}
 
-    <div class="ui pagination menu">
+    <div class="ui pagination menu center aligned">
         <a class="icon item {% if page == 1 %} disabled" {% else %} " href="{{path('casscroute_blog_listpost', {'page': page-1})}}"{% endif %}>
             <i class="left arrow icon"></i>
         </a>
