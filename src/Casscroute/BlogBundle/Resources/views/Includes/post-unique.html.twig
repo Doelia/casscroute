@@ -1,5 +1,5 @@
 <div>
-    <h2 class="ui header">
+    <div class="ui large header">
         <i class="spoon icon"></i>
         <div class="content">
             <a href="{{path('casscroute_blog_post', {'alias': post.urlAlias}) }}" class="titleArticle">{{ post.title }}</a>
@@ -8,12 +8,14 @@
                 Publié le {{post.published|date("d/m/Y à H:i", "Europe/Paris") }}
             </div>
         </div>
-    </h2>
+    </div>
+    <div class="ui divider"></div>
     <div class="post-unique">
         {% if fullRender %}
         {{ post.content|markdown }}
         {% else %}
-        {{ (post.content[:300])|markdown }}...
+        {{ (post.content[:300])|markdown }}
+        ...
         {% endif %}
     </div>
     <div>
@@ -39,4 +41,4 @@
         {% endif %}
 
     </div>
-<div>
+</div>
