@@ -1,15 +1,20 @@
 <div class="ui fixed inverted menu">
     <div class="container ui">
+        <a class="item" href="{{path('casscroute_blog_homepage')}}">
+            <img src="{{ asset('favicon.png') }}" alt="" class="icon" />
+        </a>
         <a class="header item" href="{{path('casscroute_blog_homepage')}}">
             <i class="fa fa-home pr"></i> Accueil Casscroute Blog
         </a>
         <div class="right menu">
             {% if is_granted("ROLE_USER")%}
+                {% if is_granted("ROLE_ADMIN")%}
                 <div class="item">
                     <a class="ui button green" href="{{path('casscroute_crud_new')}}">
                         <i class="fa fa-plus pr"></i> Ajouter un article
                     </a>
                 </div>
+                {% endif %}
                 <div class="item">
                     <i class="fa fa-child pr"></i> Bonjour {{app.user.username}}
                 </div>

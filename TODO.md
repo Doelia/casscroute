@@ -1,14 +1,7 @@
 # TODO
 
 - Pagination "..." dans les articles
-- Faire un panneau d'administration pour accéder aux CRUD
-- Faire le design
-    - Liste des posts
-    - Connexion / inscription
-    - Espace admin (CRUD)
 - Vérifier HTML5 semantique / valide
-- Gestion des pages d'erreur
-- Formatter correctement les dates des articles
 
 # Notes / question Stéphane
 - Utiliser le même template pour les posts de index.html et post.html

@@ -18,6 +18,11 @@
         $('.ttip.ncl').popup(); // Activation des tooltips
         $('.ui.dropdown').dropdown();
         $('.button.back').click(function() { javascript:history.back(); });
+        $('.message .close').on('click', function() {
+            $(this)
+                .closest('.message')
+                .transition('fade');
+        });
     });
     </script>
 

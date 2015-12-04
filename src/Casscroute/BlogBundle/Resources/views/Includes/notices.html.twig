@@ -1,6 +1,7 @@
 {% set notice = app.session.flashbag.get('notice')|last %}
 {% if notice is not empty %}
     <div class="ui positive message">
+        <i class="close icon"></i>
         <div class="header">
             Bravo!
         </div>
@@ -11,6 +12,7 @@
 {% set error = app.session.flashbag.get('notice')|last %}
 {% if error is not empty %}
     <div class="ui negative message">
+        <i class="close icon"></i>
         <div class="header">
             Zut alors...
         </div>
