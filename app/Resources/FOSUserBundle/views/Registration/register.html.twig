@@ -13,10 +13,12 @@
             </h2>
             {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'ui form fos_user_registration_register'}}) }}
             <div class="ui stacked segment">
-                {% if not form.vars.valid %}
+                {% if form_errors(form.username) %}
                 <div class="ui negative message">
-                    <header>Zut alors...</header>
-                    {{ form_errors(form) }}
+                    <div class="header">
+                        Zut alors...
+                    </div>
+                    {{ form_errors(form.username) }}
                 </div>
                 {% endif %}
                 <div class="field">
@@ -25,18 +27,42 @@
                         {{ form_widget(form.username, {'attr': {'class': 'form-control', 'placeholder':'Username'}})  }}
                     </div>
                 </div>
+                {% if form_errors(form.email) %}
+                <div class="ui negative message">
+                    <div class="header">
+                        Zut alors...
+                    </div>
+                    {{ form_errors(form.email) }}
+                </div>
+                {% endif %}
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="mail icon"></i>
                         {{ form_widget(form.email, {'attr': {'class': 'form-control', 'placeholder':'E-mail'}})  }}
                     </div>
                 </div>
+                {% if form_errors(form.plainPassword.first) %}
+                <div class="ui negative message">
+                    <div class="header">
+                        Zut alors...
+                    </div>
+                    {{ form_errors(form.plainPassword.first) }}
+                </div>
+                {% endif %}
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="lock icon"></i>
                         {{ form_widget(form.plainPassword.first, {'attr': {'class': 'form-control', 'placeholder':'Password'}})  }}
                     </div>
                 </div>
+                {% if form_errors(form.plainPassword.second) %}
+                <div class="ui negative message">
+                    <div class="header">
+                        Zut alors...
+                    </div>
+                    {{ form_errors(form.plainPassword.second) }}
+                </div>
+                {% endif %}
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="lock icon"></i>

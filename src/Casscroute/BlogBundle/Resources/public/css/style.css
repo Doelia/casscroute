@@ -48,3 +48,8 @@ body {
 .icon {
     width: 30px;
 }
+.post-unique img {
+    width: 100%;
+    -webkit-box-shadow: 10px;
+    border-radius: 5px;
+}

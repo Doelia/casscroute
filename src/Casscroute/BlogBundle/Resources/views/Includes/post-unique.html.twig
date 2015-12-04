@@ -9,13 +9,13 @@
             </div>
         </div>
     </h2>
-    <p>
+    <div class="post-unique">
         {% if fullRender %}
         {{ post.content|markdown }}
         {% else %}
-        {{ post.content[:300]|markdown }}...
+        {{ (post.content[:300])|markdown }}...
         {% endif %}
-    </p>
+    </div>
     <div>
         {% if not fullRender %}
             <a href="{{path('casscroute_blog_post', {'alias': post.urlAlias}) }}" class="ui primary button small">
