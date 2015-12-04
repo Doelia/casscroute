@@ -15,24 +15,29 @@ class LoadPost implements FixtureInterface
         $postSandwich1 = new Post();
         $postSandwich1->setTitle("Sandwich végétarien");
         $postSandwich1->setUrlAliasSlugified($postSandwich1->getTitle());
-        $postSandwich1->setContent("# Ingrédients
-        - 1 baguette de pain
-        - 8 fines tranches de tomate
-        - 8 fines tranches de concombre
-        - 4 tranches de fromage
-        - 1 avocat *bien mûr*
+        $postSandwich1->setContent("
 
-        # Préparation
-        ## Étape 1
-        Laver les tomates et le concombre, puis les couper en tranches avec une mandoline.
-        ## Étape 2
-        Écraser l'avocat avec une fourchette, le saler et le poivrer.
-        ## Étape 3
-        Couper la baguette en deux dans la longueur. Les tartiner avec la purée d'avocat.
-        ## Étape 4
-        Disposer sur la purée d'avocat les tranches de légumes et de fromage.
-        ## Étape 5
-        Déguster!");
+![](http://www.maredsousfromages.be/wp-content/uploads/2013/04/4.3.3-Sandwich-vegetarien.jpg)
+
+# Ingrédients
+- 1 baguette de pain
+- 8 fines tranches de tomate
+- 8 fines tranches de concombre
+- 4 tranches de fromage
+- 1 avocat *bien mûr*
+
+# Préparation
+## Étape 1
+Laver les tomates et le concombre, puis les couper en tranches avec une mandoline.
+## Étape 2
+Écraser l'avocat avec une fourchette, le saler et le poivrer.
+## Étape 3
+Couper la baguette en deux dans la longueur. Les tartiner avec la purée d'avocat.
+## Étape 4
+Disposer sur la purée d'avocat les tranches de légumes et de fromage.
+## Étape 5
+Déguster!");
+
         $postSandwich1->setPublished(new \DateTime('NOW'));
         $manager->persist($postSandwich1);
 
