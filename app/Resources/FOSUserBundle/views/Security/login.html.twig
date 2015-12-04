@@ -8,9 +8,9 @@
     <div class="ui middle aligned center aligned grid">
         <div class="column">
             <h2 class="ui blue image header">
-                <div class="content">
+                <span class="content">
                     Connexion
-                </div>
+                </span>
             </h2>
             <form class="ui large form" action="{{ path("fos_user_security_check") }}" method="post">
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
