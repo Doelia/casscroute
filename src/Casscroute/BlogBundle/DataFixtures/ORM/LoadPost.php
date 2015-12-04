@@ -77,7 +77,7 @@ Déguster!");
         $manager->persist($postSandwich2);
 
 
-        for ($i = 1; $i < 15; $i++)
+        for ($i = 1; $i < 14*4; $i++)
         {
             $post = new Post();
             $post->setTitle("Article " . $i);

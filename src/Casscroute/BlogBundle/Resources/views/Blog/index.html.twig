@@ -24,16 +24,22 @@
 
     <div class="ui center aligned basic segment">
         <div class="ui pagination menu">
-            <a class="icon item {% if page == 1 %} disabled" {% else %} " href="{{path('casscroute_blog_listpost', {'page': page-1})}}"{% endif %}>
-                <i class="left arrow icon"></i>
+            <a class="icon item {% if page == 1 %} disabled" {% else %} ttip ncl " href="{{path('casscroute_blog_listpost', {'page': 1})}}"{% endif %} data-content="Revenir au début">
+                <i class="angle double left icon"></i>
             </a>
-            {% for i in 1 .. nbPages %}
+            <a class="icon item {% if page == 1 %} disabled" {% else %} ttip ncl" href="{{path('casscroute_blog_listpost', {'page': page-1})}}"{% endif %} data-content="Page précédente">
+                <i class="angle left icon"></i>
+            </a>
+            {% for i in range(max(page-3, 1), min(page+3, nbPages))  %}
                 <a class="item {% if i == page %}active{% endif %}" href="{{path('casscroute_blog_listpost', {'page': i})}}">
                     {{i}}
                 </a>
             {% endfor %}
-            <a class="icon item {% if page == nbPages %} disabled" {% else %} " href="{{path('casscroute_blog_listpost', {'page': page+1})}}"{% endif %}>
-                <i class="right arrow icon"></i>
+            <a class="icon item {% if page == nbPages %} disabled" {% else %} ttip ncl" href="{{path('casscroute_blog_listpost', {'page': page+1})}}"{% endif %} data-content="Page suivante">
+                <i class="angle right icon"></i>
+            </a>
+            <a class="icon item {% if page == nbPages %} disabled" {% else %} ttip ncl" href="{{path('casscroute_blog_listpost', {'page': nbPages})}}"{% endif %} data-content="Aller à la fin">
+                <i class="angle double right icon"></i>
             </a>
         </div>
     </div>
