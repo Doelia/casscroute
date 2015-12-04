@@ -19,7 +19,6 @@ class AppKernel extends Kernel
             new Casscroute\BlogBundle\CasscrouteBlogBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
-            new Ornj\Bundle\MarkdownBundle\OrnjMarkdownBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

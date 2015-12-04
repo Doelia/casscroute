@@ -35,9 +35,6 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
-    form:
-        resources:
-            - 'OrnjMarkdownBundle:Form:fields.html.twig'
 
 # Assetic Configuration
 assetic:
