@@ -11,9 +11,9 @@
     </h2>
     <p>
         {% if fullRender %}
-            {{ post.content }}
+            {{ post.content|markdown }}
         {% else %}
-            {{ post.content[:300] }}...
+            {{ post.content[:300]|markdown }}...
         {% endif %}
     </p>
     <div class="">
