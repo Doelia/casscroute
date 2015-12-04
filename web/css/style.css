@@ -45,3 +45,6 @@ body {
 .masthead h1 a {
     color: white;
 }
+.icon {
+    width: 30px;
+}
