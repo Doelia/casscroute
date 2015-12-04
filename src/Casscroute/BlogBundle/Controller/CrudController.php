@@ -41,11 +41,13 @@ class CrudController extends Controller
         $em = $this->getDoctrine()->getManager();
         $postRepository = $em->getRepository('CasscrouteBlogBundle:Post');
         $post = $postRepository->findOneByUrlAlias($alias);
-        if (!$post) {
+        if (!$post)
+        {
             throw $this->createNotFoundException('Le Post n\'existe pas.');
         }
 
-        if ($post == null) {
+        if ($post == null)
+        {
             $request->getSession()->getFlashBag()->add('error', "Ce post n'existe pas.");
             return $this->render('CasscrouteBlogBundle:Blog:index.html.twig');
         }
@@ -74,15 +76,19 @@ class CrudController extends Controller
         $em = $this->getDoctrine()->getManager();
         $postRepository = $em->getRepository('CasscrouteBlogBundle:Post');
         $post = $postRepository->findOneByUrlAlias($alias);
-        if (!$post) {
+        if (!$post)
+        {
             throw $this->createNotFoundException('Le Post n\'existe pas.');
         }
 
-        if ($post != null) {
+        if ($post != null)
+        {
             $em->remove($post);
             $em->flush();
             $request->getSession()->getFlashBag()->add('notice', 'Le post a été supprimé.');
-        } else {
+        }
+        else
+        {
             $request->getSession()->getFlashBag()->add('error', "Ce post n'existe pas.");
         }
 
