@@ -2,11 +2,11 @@
 
 {% block blog_body %}
     {% include "CasscrouteBlogBundle:Includes:notices.html.twig" %}
-    
+
     <a href="{{path('casscroute_blog_homepage')}}" class="button primary">
         <i class="fa fa-chevron-circle-left pr"></i>Retour à la liste des articles
     </a>
-    <div class="ui divider"></div>
+    <div class="ui divider post"></div>
     {% set fullRender = true %}
     {% include "CasscrouteBlogBundle:Includes:post-unique.html.twig" %}
 {% endblock %}
