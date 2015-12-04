@@ -9,7 +9,7 @@
     </div>
 {% endif %}
 
-{% set error = app.session.flashbag.get('notice')|last %}
+{% set error = app.session.flashbag.get('error')|last %}
 {% if error is not empty %}
     <div class="ui negative message">
         <i class="close icon"></i>
