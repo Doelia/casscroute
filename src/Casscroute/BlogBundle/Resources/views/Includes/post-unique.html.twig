@@ -9,11 +9,13 @@
             </div>
         </div>
     </h2>
+    <div class="ui divider"></div>
     <div class="post-unique">
         {% if fullRender %}
         {{ post.content|markdown }}
         {% else %}
-        {{ (post.content[:300])|markdown }}...
+        {{ (post.content[:300])|markdown }}
+        ...
         {% endif %}
     </div>
     <div>
