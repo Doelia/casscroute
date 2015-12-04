@@ -16,7 +16,7 @@ class PostType extends AbstractType
     {
         $builder
             ->add('title', null, array('label' => false))
-            ->add('content', 'epic_editor', array('label' => false))
+            ->add('content', null, array('label' => false))
             ->add('Enregistrer', 'submit')
         ;
     }
