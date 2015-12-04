@@ -48,11 +48,11 @@ Déguster!");
 
         //Recette de sandwich numéro 1
         $postSandwich2 = new Post();
-        $postSandwich2->setTitle("Sandwich ");
+        $postSandwich2->setTitle("Sandwich pois-chiches et curry");
         $postSandwich2->setUrlAliasSlugified($postSandwich2->getTitle());
         $postSandwich2->setContent("
 
-![](http://www.shelikesfood.com/wp-content/uploads/2015/12/Curried-Chickpea-Salad-Sandwiches-9249.jpg)
+![](http://image.noelshack.com/fichiers/2015/49/1449225437-curried-chickpea-salad-sandwiches-9249.jpg)
 
 ## Ingrédients
 - 2 tranches de pain de campagne
@@ -69,11 +69,11 @@ Préparer la purée de pois-chiches en mettant dans un mixer les pois-chiches, l
 ### Étape 2
 Faire griller le pain. Disposer sur la première tranche les feuilles de roquette.
 ### Étape 3
-Étaler la purée de pois-chiches sur la salade.
+Étaler généreusement la purée de pois-chiches sur la salade.
 ### Étape 4
 Déguster!");
 
-        $postSandwich2->setPublished(new \DateTime('NOW'));
+        $postSandwich2->setPublished(new \DateTime("2015-12-07 13:38"));
         $manager->persist($postSandwich2);
 
 
@@ -87,7 +87,7 @@ Déguster!");
 consectetur adipiscing elit.\n
 ### Mauris porta velit faucibus\n
 laoreet nibh sit amet, molestie dui. Nulla eu ante lectus. Ut tempus, felis a accumsan mattis, lectus mi lacinia diam, malesuada dictum mi ipsum et mi. Nulla cursus sem tellus, eu tincidunt mauris ornare eu. Mauris ut dui viverra mauris ultrices lacinia. Mauris non ante eleifend, scelerisque nulla vitae, aliquet ligula. Proin dui risus, tristique at tortor ultrices, maximus suscipit magna. Nullam felis magna, laoreet ac mattis sed, feugiat eu mi. Donec ut consectetur sapien, a interdum ipsum. Duis consequat enim non tellus laoreet ornare. Nullam et tristique risus, iaculis semper nibh.");
-            $post->setPublished(new \DateTime("2015-01-01 10:00:" . $i));
+            $post->setPublished(new \DateTime("2015-10-25 10:03:" . $i));
             $manager->persist($post);
         }
 

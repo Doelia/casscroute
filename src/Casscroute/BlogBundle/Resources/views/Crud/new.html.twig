@@ -17,6 +17,9 @@
             <label>Contenu</label>
             {{ form_widget(form.content, {'attr': {'class': 'form-control'}})  }}
         </div>
+        <p>
+            <i class="fa fa-info pr"></i> Pour la mise en page, vous pouvez utilser le <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">markdown</a>.
+        </p>
         {{ form_widget(form.Enregistrer, {'attr': {'class': 'ui button primary'}}) }}
         <a href="#" class="ui button back">Annuler</a>
     {{ form_end(form) }}
