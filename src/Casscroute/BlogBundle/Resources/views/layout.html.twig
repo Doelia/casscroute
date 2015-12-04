@@ -11,21 +11,7 @@
 {% block javascripts %}
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
-
-    <script type="text/javascript">
-    $(function() {
-        $('.ttip.cl').popup({on: 'click'}); // Activation des tooltips
-        $('.ttip.ncl').popup(); // Activation des tooltips
-        $('.ui.dropdown').dropdown();
-        $('.button.back').click(function() { javascript:history.back(); });
-        $('.message .close').on('click', function() {
-            $(this)
-                .closest('.message')
-                .transition('fade');
-        });
-    });
-    </script>
-
+    <script type="text/javascript" src="{{asset('js/init.js') }}"></script>
 {% endblock %}
 
 {% block body %}
