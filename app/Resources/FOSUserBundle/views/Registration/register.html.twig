@@ -7,9 +7,9 @@
     <div class="ui middle aligned center aligned grid">
         <div class="column">
             <h2 class="ui blue image header">
-                <div class="content">
+                <span class="content">
                     Inscription
-                </div>
+                </span>
             </h2>
             {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'ui form fos_user_registration_register'}}) }}
             <div class="ui stacked segment">
@@ -72,6 +72,9 @@
                 <div>
                     <input type="submit" class="ui fluid large blue submit button" value="{{ 'registration.submit'|trans }}" />
                 </div>
+            </div>
 {{ form_end(form) }}
-
+    </div>
+    </div>
+</div>
 {% endblock body %}
