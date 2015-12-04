@@ -36,8 +36,8 @@ body {
     color: black;
 }
 .divider.post {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 25px;
+
 }
 .ui.vertical.segment.masthead {
     margin-bottom: 30px;
@@ -51,5 +51,7 @@ body {
 .post-unique img {
     width: 100%;
     -webkit-box-shadow: 10px;
-    border-radius: 5px;
+}
+.post-unique {
+    margin-bottom: 20px;
 }
