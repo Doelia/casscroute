@@ -1,30 +1,35 @@
 <div>
     <h2 class="ui header">
-      <i class="spoon icon"></i>
-      <div class="content">
-        <a href="{{path('casscroute_blog_post', {'alias': post.urlAlias}) }}" class="titleArticle">{{ post.title }}</a>
-        <div class="sub header">
-            <i class="fa fa-calendar"></i>
-            Publié le {{post.published|date("d/m/Y à H:i", "Europe/Paris") }}
+        <i class="spoon icon"></i>
+        <div class="content">
+            <a href="{{path('casscroute_blog_post', {'alias': post.urlAlias}) }}" class="titleArticle">{{ post.title }}</a>
+            <div class="sub header">
+                <i class="fa fa-calendar"></i>
+                Publié le {{post.published|date("d/m/Y à H:i", "Europe/Paris") }}
+            </div>
         </div>
-      </div>
     </h2>
     <p>
         {% if fullRender %}
-            {{ post.content|markdown }}
+        {{ post.content|markdown }}
         {% else %}
-            {{ post.content[:300]|markdown }}...
+        {{ post.content[:300]|markdown }}...
         {% endif %}
     </p>
-    <div class="">
-
+    <div>
         {% if not fullRender %}
-        <a href="{{path('casscroute_blog_post', {'alias': post.urlAlias}) }}" class="ui primary button small">
-            <i class="fa fa-play pr"></i> Lire la suite
-        </a>
+            <a href="{{path('casscroute_blog_post', {'alias': post.urlAlias}) }}" class="ui primary button small">
+                <i class="fa fa-play pr"></i> Lire la suite
+            </a>
         {% endif %}
 
-        <button class="ui button small ttip cl" data-title="Lien de partage" data-html="<div class='header'>Lien de partage</div><div class='content'><div class='ui mini input'><input value='{{app.request.getSchemeAndHttpHost() ~ path('casscroute_blog_post', {'alias': post.urlAlias}) }}'/></div></div></div>">
+        <button class="ui button small ttip cl" data-title="Lien de partage" data-html="
+            <div class='header'>Lien de partage</div>
+            <div class='content'>
+                <div class='ui mini input'>
+                    <input value='{{app.request.getSchemeAndHttpHost() ~ path('casscroute_blog_post', {'alias': post.urlAlias}) }}'/>
+                </div>
+            </div>">
             <i class="fa fa-link pr"></i> Partager
         </button>
 

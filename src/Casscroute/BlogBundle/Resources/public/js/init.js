@@ -1,6 +1,5 @@
 $(function() {
 
-
     // Activation des tooltips
     $('.ttip.cl').popup({on: 'click'});
 
@@ -21,4 +20,5 @@ $(function() {
             .closest('.message')
             .transition('fade');
     });
+
 });
