@@ -13,7 +13,8 @@
         {% if fullRender %}
         {{ post.content|markdown }}
         {% else %}
-        {{ (post.content[:300])|markdown }}...
+        {{ (post.content[:300])|markdown }}
+        ...<br><br>
         {% endif %}
     </div>
     <div>
