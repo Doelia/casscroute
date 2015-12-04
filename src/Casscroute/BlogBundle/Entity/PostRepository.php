@@ -13,7 +13,9 @@ class PostRepository extends \Doctrine\ORM\EntityRepository
 {
     public function getPosts($page, $numberPerPage)
     {
-        $query = $this->createQueryBuilder('p')->getQuery();
+        $query = $this->createQueryBuilder('p')
+            ->orderBy('p.published', 'DESC')
+            ->getQuery();
         $query
             ->setFirstResult(($page-1) * $numberPerPage)
             ->setMaxResults($numberPerPage)
