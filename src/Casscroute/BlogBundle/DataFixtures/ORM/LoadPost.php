@@ -52,7 +52,7 @@ Déguster!");
         $postSandwich2->setUrlAliasSlugified($postSandwich2->getTitle());
         $postSandwich2->setContent("
 
-![](http://www.shelikesfood.com/wp-content/uploads/2015/12/Curried-Chickpea-Salad-Sandwiches-9249.jpg)
+![](http://image.noelshack.com/fichiers/2015/49/1449225437-curried-chickpea-salad-sandwiches-9249.jpg)
 
 ## Ingrédients
 - 2 tranches de pain de campagne

@@ -1,18 +1,5 @@
 {% extends "CasscrouteBlogBundle::layout.html.twig" %}
 
-{% block stylesheets %}
-    {{ parent() }}
-
-{% endblock %}
-
-{% block javascripts %}
-    {{ parent() }}
-    <script src="{{ asset('OrnjMarkdownBundle/Resources/public/js/markdown.js') }}"></script>
-    <script src="{{ asset('OrnjMarkdownBundle/Resources/public/js/to-markdown.js') }}"></script>
-    <script src="{{ asset('OrnjMarkdownBundle/Resources/public/js/bootbox.js') }}"></script>
-    <script src="{{ asset('OrnjMarkdownBundle/Resources/public/js/bootstrap-markdown.js') }}"></script>
-{% endblock %}
-
 {% block blog_body %}
     {% block crud_title %}<h2>Création d'un article</h2>{% endblock %}
 
@@ -30,6 +17,9 @@
             <label>Contenu</label>
             {{ form_widget(form.content, {'attr': {'class': 'form-control'}})  }}
         </div>
+        <p>
+            <i class="fa fa-info pr"></i> Pour la mise en page, vous pouvez utilser le <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">markdown</a>.
+        </p>
         {{ form_widget(form.Enregistrer, {'attr': {'class': 'ui button primary'}}) }}
         <a href="#" class="ui button back">Annuler</a>
     {{ form_end(form) }}
