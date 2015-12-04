@@ -8,11 +8,13 @@
         </a>
         <div class="right menu">
             {% if is_granted("ROLE_USER")%}
+                {% if is_granted("ROLE_ADMIN")%}
                 <div class="item">
                     <a class="ui button green" href="{{path('casscroute_crud_new')}}">
                         <i class="fa fa-plus pr"></i> Ajouter un article
                     </a>
                 </div>
+                {% endif %}
                 <div class="item">
                     <i class="fa fa-child pr"></i> Bonjour {{app.user.username}}
                 </div>
