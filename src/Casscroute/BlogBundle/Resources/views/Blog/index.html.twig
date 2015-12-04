@@ -6,7 +6,6 @@
 
     <div class="ui inverted vertical masthead center aligned segment">
         <div class="ui text container">
-
             <h1 class="ui inverted header">
                 <a href="{{path('casscroute_blog_homepage')}}">
                     Casscroute Blog
@@ -23,19 +22,19 @@
     {% endfor %}
 
     <div class="ui center aligned basic segment">
-    <div class="ui pagination menu">
-        <a class="icon item {% if page == 1 %} disabled" {% else %} " href="{{path('casscroute_blog_listpost', {'page': page-1})}}"{% endif %}>
-            <i class="left arrow icon"></i>
-        </a>
-        {% for i in 1 .. nbPages %}
-            <a class="item {% if i == page %}active{% endif %}" href="{{path('casscroute_blog_listpost', {'page': i})}}">
-                {{i}}
+        <div class="ui pagination menu">
+            <a class="icon item {% if page == 1 %} disabled" {% else %} " href="{{path('casscroute_blog_listpost', {'page': page-1})}}"{% endif %}>
+                <i class="left arrow icon"></i>
             </a>
-        {% endfor %}
-        <a class="icon item {% if page == nbPages %} disabled" {% else %} " href="{{path('casscroute_blog_listpost', {'page': page+1})}}"{% endif %}>
-            <i class="right arrow icon"></i>
-        </a>
-    </div>
+            {% for i in 1 .. nbPages %}
+                <a class="item {% if i == page %}active{% endif %}" href="{{path('casscroute_blog_listpost', {'page': i})}}">
+                    {{i}}
+                </a>
+            {% endfor %}
+            <a class="icon item {% if page == nbPages %} disabled" {% else %} " href="{{path('casscroute_blog_listpost', {'page': page+1})}}"{% endif %}>
+                <i class="right arrow icon"></i>
+            </a>
+        </div>
     </div>
 
 {% endblock %}
