@@ -5,7 +5,7 @@
         <a href="{{path('casscroute_blog_post', {'alias': post.urlAlias}) }}" class="titleArticle">{{ post.title }}</a>
         <div class="sub header">
             <i class="fa fa-calendar"></i>
-            Publié le {{post.published|date('y-m-d') }}
+            Publié le {{post.published|date('d-m-y') }}
         </div>
       </div>
     </h2>
