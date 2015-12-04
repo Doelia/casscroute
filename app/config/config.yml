@@ -35,12 +35,15 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    form:
+        resources:
+            - 'OrnjMarkdownBundle:Form:fields.html.twig'
 
 # Assetic Configuration
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ ]
+    bundles:        [ CasscrouteBlogBundle ]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
