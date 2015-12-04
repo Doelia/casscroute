@@ -5,6 +5,18 @@ casscroute_blog:
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 
-fos_user_register:
-    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
-    prefix: /register
+fos_user_registration_register:
+    path:     /register
+    defaults: { _controller: FOSUserBundle:Registration:register }
+
+fos_user_registration_check_email:
+    path:     /register/check-email
+    defaults: { _controller: FOSUserBundle:Registration:checkEmail }
+
+fos_user_registration_confirm:
+    path:     /register/confirm/{token}
+    defaults: { _controller: FOSUserBundle:Registration:confirm }
+
+fos_user_registration_confirmed:
+    path:     /register/confirmed
+    defaults: { _controller: CasscrouteBlogBundle:Registration:confirmed }
