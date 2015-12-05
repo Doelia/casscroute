@@ -23,7 +23,7 @@ http://casscroute.doelia.fr
 - Surcouche admin lorqu'on est connecté :
     - Création / Édition / Suppresion des articles
 - Pages d'erreurs personnalisées (mode prod uniquement)
-- Datas Fixtures prépaprées pour les tests
+- Data Fixtures préparées pour les tests
 
 ## Techonologies utilisées
 - Framework **Symfony**
