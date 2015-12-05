@@ -5,27 +5,28 @@
 Une version de démonstration est en ligne :  
 http://casscroute.doelia.fr
 
-- *Compte administrateur* : admin, mot de passe admin
-- *Compte utilisateur* : user, mot de passe user
+- **Compte administrateur** : admin / admin
+- **Compte utilisateur** : user / user
 
 ## Fonctionnalités
 
 - Visualisation des posts
+    - Titre, date, contenu
     - Interprétation du langage markdown
 - Système de pagignation complexe
 - Connexion / Inscription
-- Droits admin :
+- Surcouche admin lorqu'on est connecté :
     - Création / Édition / Suppresion des articles
 - Pages d'erreurs personnalisées (mode prod uniquement)
-- Datas Fixtures pour les jeux de tests
+- Datas Fixtures prépaprées pour les tests
 
 ## Techonologie utilisées
-- Framework Synfony
-    - Bundle *Fosuser* pour la gestion des utilisateurs
-    - Bundle *Data fixtures*
-    - Bundle *knp-markdown-bundle* pour l'interprétation du Markdown
-- Framework CSS [Semantic UI](http://semantic-ui.com/)
-- Librarie [Jquery](https://jquery.com/)
+- Framework Symfony
+    - Bundle **Fosuser* pour la gestion des utilisateurs
+    - Bundle **Data fixtures**
+    - Bundle **knp-markdown-bundle** pour l'interprétation du Markdown
+- Framework CSS **[Semantic UI](http://semantic-ui.com/)**
+- Librarie **[Jquery](https://jquery.com/)**
 
 ## Configuration et installation
 
