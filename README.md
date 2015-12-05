@@ -1,5 +1,10 @@
 # Projet casscroute
 
+Membres du groupe :
+- Pierre Cavalet
+- Marlène Guillemette
+- Stéphane Wouters
+
 ## Utilisation
 
 Une version de démonstration est en ligne :  
