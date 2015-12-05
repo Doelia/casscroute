@@ -30,7 +30,7 @@ http://casscroute.doelia.fr
     - Bundle **Fosuser** pour la gestion des utilisateurs
     - Bundle **Data fixtures**
     - Bundle **knp-markdown-bundle** pour l'interprétation du Markdown
-    - A REMPLIR : Le nom du bundle pour minifier le CSS/JS
+    - Bundle **Assetice** pour minifier le CSS/JS
 - Framework CSS **[Semantic UI](http://semantic-ui.com/)**
 - Librarie **[Jquery](https://jquery.com/)**
 
@@ -59,6 +59,11 @@ nano app/config/parameters.yml
 Regénérer les fixtures :
 ```
 php app/console doctrine:fixtures:load
+```
+
+Dumper les CSS/JS :
+```
+php app/console assetic:dump
 ```
 
 Lancer le serveur en mode **production** :
