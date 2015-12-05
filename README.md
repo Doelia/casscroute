@@ -1,64 +1,58 @@
 # Projet casscroute
 
-## Installer les dépendances
+## Utilisation
+
+Une version de démonstration est en ligne :  
+http://casscroute.doelia.fr
+
+- *Compte administrateur* : admin, mot de passe admin
+- *Compte utilisateur* : user, mot de passe user
+
+## Fonctionnalités
+
+- Visualisation des posts
+    - Interprétation du langage markdown
+- Système de pagignation complexe
+- Connexion / Inscription
+- Droits admin :
+    - Création / Édition / Suppresion des articles
+- Pages d'erreurs personnalisées (mode prod uniquement)
+- Datas Fixtures pour les jeux de tests
+
+## Techonologie utilisées
+- Framework Synfony
+    - Bundle *Fosuser* pour la gestion des utilisateurs
+    - Bundle *Data fixtures*
+    - Bundle *knp-markdown-bundle* pour l'interprétation du Markdown
+- Framework CSS [Semantic UI](http://semantic-ui.com/)
+- Librarie [Jquery](https://jquery.com/)
+
+## Configuration et installation
+
+Dump SQL disponible :
+
+Cloner le projet :
+```
+git clone https://github.com/Doelia/casscroute
+cd casscroute
+```
+
+Installer les dépendances :
 ```
 composer install
 ```
 
-## Mettre à jour les dépendances
+Modifier et adapter la configuration SQL :
 ```
-composer update
-```
-
-## Lancer le serveur
-```
-php app/console server:run
+nano app/config/parameters.yml
 ```
 
-## Lancer le serveur en mode ProductBundle
-```
-php app/console server:run --env=prod
-```
-
-## Générer un Bundle
-```
-php app/console generate:bundle --namespace=Author/ProductBundle --format=yml
-```
-Puis suivre l'assistant
-
-## Créer la base de donnée
-```
-php app/console doctrine:database:create
-```
-
-## Gérérer une entité
-```
-php app/console doctrine:generate:entity
-```
-Puis suivre l'assitant
-
-## Gestion création table
-### Afficher ce qui va être créé
-```
-php app/console doctrine:schema:update --dump-sql
-```
-### Créer
-```
-php app/console doctrine:schema:update --force
-```
-
-# Executer les fixtures (jeu de test)
+Regénérer les fixtures :
 ```
 php app/console doctrine:fixtures:load
 ```
 
-# Ajout bundle externe
+Lancer le serveur en mode **production** :
 ```
-php composer.phar require friendsofsymfony/user-bundle "~2.0@dev"
-```
-Modifier AppKernel.php pour ajouter le nouveau bundle dans l'array bundles (méthode registerBundles)
-
-# Créer un formulaire
-```
-php app/console doctrine:generate:form CasscrouteBlogBundle:Post
+php app/console server:run --env=prod
 ```
