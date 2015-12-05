@@ -21,8 +21,8 @@ http://casscroute.doelia.fr
 - Datas Fixtures prépaprées pour les tests
 
 ## Techonologie utilisées
-- Framework Symfony
-    - Bundle **Fosuser* pour la gestion des utilisateurs
+- Framework **Symfony**
+    - Bundle **Fosuser** pour la gestion des utilisateurs
     - Bundle **Data fixtures**
     - Bundle **knp-markdown-bundle** pour l'interprétation du Markdown
 - Framework CSS **[Semantic UI](http://semantic-ui.com/)**
