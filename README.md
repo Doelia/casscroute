@@ -15,7 +15,7 @@ http://casscroute.doelia.fr
 
 ## Fonctionnalités
 
-- Visualisation des posts
+- Visualisation des articles
     - Titre, date, contenu
     - Interprétation du langage markdown
 - Système de pagignation complexe
@@ -30,12 +30,15 @@ http://casscroute.doelia.fr
     - Bundle **Fosuser** pour la gestion des utilisateurs
     - Bundle **Data fixtures**
     - Bundle **knp-markdown-bundle** pour l'interprétation du Markdown
+    - Bundle **Assetice** pour minifier le CSS/JS
 - Framework CSS **[Semantic UI](http://semantic-ui.com/)**
 - Librarie **[Jquery](https://jquery.com/)**
 
 ## Configuration et installation
 
-Dump SQL disponible :
+Télécharger le dump SQL et l'importer dans une base MySQL :  
+https://github.com/Doelia/casscroute/raw/master/casscroute.sql
+
 
 Cloner le projet :
 ```
@@ -56,6 +59,11 @@ nano app/config/parameters.yml
 Regénérer les fixtures :
 ```
 php app/console doctrine:fixtures:load
+```
+
+Dumper les CSS/JS :
+```
+php app/console assetic:dump
 ```
 
 Lancer le serveur en mode **production** :
