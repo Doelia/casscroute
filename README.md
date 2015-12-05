@@ -35,7 +35,9 @@ http://casscroute.doelia.fr
 
 ## Configuration et installation
 
-Dump SQL disponible :
+Télécharger le dump SQL et l'importer dans une base MySQL :  
+https://github.com/Doelia/casscroute/raw/master/casscroute.sql
+
 
 Cloner le projet :
 ```
