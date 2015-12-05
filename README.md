@@ -15,7 +15,7 @@ http://casscroute.doelia.fr
 
 ## Fonctionnalités
 
-- Visualisation des posts
+- Visualisation des articles
     - Titre, date, contenu
     - Interprétation du langage markdown
 - Système de pagignation complexe
@@ -30,6 +30,7 @@ http://casscroute.doelia.fr
     - Bundle **Fosuser** pour la gestion des utilisateurs
     - Bundle **Data fixtures**
     - Bundle **knp-markdown-bundle** pour l'interprétation du Markdown
+    - A REMPLIR : Le nom du bundle pour minifier le CSS/JS
 - Framework CSS **[Semantic UI](http://semantic-ui.com/)**
 - Librarie **[Jquery](https://jquery.com/)**
 
