@@ -25,7 +25,7 @@ http://casscroute.doelia.fr
 - Pages d'erreurs personnalisées (mode prod uniquement)
 - Datas Fixtures prépaprées pour les tests
 
-## Techonologie utilisées
+## Techonologies utilisées
 - Framework **Symfony**
     - Bundle **Fosuser** pour la gestion des utilisateurs
     - Bundle **Data fixtures**
