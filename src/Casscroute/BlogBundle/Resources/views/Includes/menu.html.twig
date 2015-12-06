@@ -7,7 +7,7 @@
             <i class="fa fa-home pr"></i> Accueil Casscroute Blog
         </a>
         <div class="right menu">
-            {% if is_granted("ROLE_USER")%}
+            {% if app.user is not null and is_granted("ROLE_USER")%}
                 {% if is_granted("ROLE_ADMIN")%}
                 <div class="item">
                     <a class="ui button green" href="{{path('casscroute_crud_new')}}">
