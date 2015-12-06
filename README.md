@@ -18,11 +18,11 @@ http://casscroute.doelia.fr
 - Visualisation des articles
     - Titre, date, contenu
     - Interprétation du langage markdown
-- Système de pagignation complexe
+- Système de pagination complexe
 - Connexion / Inscription
-- Surcouche admin lorqu'on est connecté :
-    - Création / Édition / Suppresion des articles
-- Pages d'erreurs personnalisées (mode prod uniquement)
+- Surcouche admin lorsqu'on est connecté :
+    - Création / Édition / Suppression des articles
+- Pages d'erreur personnalisées (mode prod uniquement)
 - Data Fixtures préparées pour les tests
 
 ## Techonologies utilisées
