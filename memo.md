@@ -1,4 +1,6 @@
-# Projet casscroute
+# Mémo Symfony
+
+Un mémo des quelques commandes utiles pour un projet Symfony
 
 ## Installer les dépendances
 ```
