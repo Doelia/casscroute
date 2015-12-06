@@ -63,7 +63,7 @@ php app/console doctrine:fixtures:load
 
 Dumper les CSS/JS :
 ```
-php app/console assetic:dump
+php app/console assetic:dump --env=prod
 ```
 
 Lancer le serveur en mode **production** :
